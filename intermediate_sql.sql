@@ -117,10 +117,34 @@ from employee_demographics
 ;
 
 
+select first_name, replace(first_name, 'a', 'z')
+from employee_demographics
+;
 
 
+select locate('x', 'Raxit');
+
+select first_name, locate('an', first_name)
+from employee_demographics
+;
+
+select first_name, last_name,
+concat(first_name,'  ',last_name) as full_name
+from employee_demographics
+;
 
 
+-- Case Statements --
+
+select first_name, last_name,age,
+case
+	when age <=30 then 'Young'
+    when age between 31 and 50 then 'Old'
+    when age >=50 then 'On Death''s Door'
+end
+as Age_bracket
+
+from employee_demographics
 
 
 
